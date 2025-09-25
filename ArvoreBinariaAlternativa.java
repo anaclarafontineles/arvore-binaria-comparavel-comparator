@@ -1,4 +1,8 @@
-public class ArvoreBinariaAlternativa<T> {
+package arvore_nome.tree;
+
+import java.util.Comparator;
+
+public class ArvoreBinariaAlternativa<T> implements Arvore<T> {
     private NodoArvore<T> raiz;
     private Comparator<T> comparator;
 
@@ -6,6 +10,7 @@ public class ArvoreBinariaAlternativa<T> {
         this.comparator = comparator;
     }
 
+    @Override
     public void inserir(T valor) {
         raiz = inserirRec(raiz, valor);
     }
@@ -21,6 +26,7 @@ public class ArvoreBinariaAlternativa<T> {
         return atual;
     }
 
+    @Override
     public void imprimeEmOrdem() {
         imprimeEmOrdemRec(raiz);
     }
@@ -33,6 +39,7 @@ public class ArvoreBinariaAlternativa<T> {
         }
     }
 
+    @Override
     public void imprimePreFixado() {
         imprimePreFixadoRec(raiz);
     }
